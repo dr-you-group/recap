@@ -17,7 +17,13 @@ Run RECAP from this source checkout. The current runtime loads companion scripts
 
 ### 2. Configure serve_llm
 
-**Live document review requires the separately maintained `serve_llm` infrastructure, checked out at `./serve-llm/`.** It is not included in this repository and is not the similarly named PyPI package. Prepare its model server, credentials, SSH access, and deployment records before using `recap review` or `recap ground`.
+**Live document review requires the separately maintained [serve-llm infrastructure](https://github.com/ts06068/serve-llm), checked out at `./serve-llm/`.** It is not included in this repository and is not the similarly named PyPI package. Prepare its model server, credentials, SSH access, and deployment records before using `recap review` or `recap ground`.
+
+If it is not already present, clone it from the RECAP repository root:
+
+```bash
+git clone https://github.com/ts06068/serve-llm.git serve-llm
+```
 
 The current runtime also requires the matching local infrastructure state:
 
