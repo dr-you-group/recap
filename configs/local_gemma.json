@@ -1,0 +1,24 @@
+{
+  "backend": "existing_serve_llm_vllm",
+  "transport": "chat_completions",
+  "model_id": "google/gemma-4-31B-it",
+  "model_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+  "image": "supported",
+  "tools": "unknown",
+  "structured_output": "supported",
+  "reasoning": "unknown",
+  "sampling": "unknown",
+  "logprobs": "unknown",
+  "reasoning_wire_key": "chat_template_kwargs.enable_thinking",
+  "max_images": 2,
+  "image_policy": "original_bytes_no_resize",
+  "serving_verified": false,
+  "evidence": {
+    "image": "local client/config plus historical vision verification JSON; current endpoint NOT_RUN",
+    "structured_output": "local xgrammar configuration plus historical JSON verification; current endpoint NOT_RUN",
+    "reasoning": "existing client sends enable_thinking=False; that does not verify enabled reasoning, so explicit reasoning requests are rejected until audited",
+    "tools": "no current model/engine tool-call verification",
+    "sampling": "not probed; explicit sampling requests rejected",
+    "logprobs": "not probed; explicit logprob requests rejected"
+  }
+}

@@ -1,0 +1,88 @@
+# Track only the source checkout needed to use RECAP.
+/*
+!/.gitignore
+!/.python-version
+!/README.md
+!/pyproject.toml
+!/uv.lock
+!/src/
+!/configs/
+!/profiles/
+!/scripts/
+
+# Runtime profiles, not experiment settings or generated bindings.
+/configs/*
+!/configs/local_gemma.json
+/profiles/*
+!/profiles/final.json
+
+# The final runtime uses m1 -> r2 -> r5; legacy public review uses m4/m6.
+/scripts/*
+!/scripts/m1_infra.py
+!/scripts/r2_infra.py
+!/scripts/r5_infra.py
+!/scripts/m4_infra.py
+!/scripts/m6_infra.py
+
+# Package modules and the original scorer used by the public CLI.
+/src/*
+!/src/recap/
+/src/recap/*
+!/src/recap/*.py
+!/src/recap/vendor/
+/src/recap/vendor/*
+!/src/recap/vendor/__init__.py
+!/src/recap/vendor/sciclaimeval_eval.py
+
+# Historical research helpers outside the public CLI's import graph.
+/src/recap/frontier.py
+/src/recap/frontier_execution.py
+/src/recap/h0_probe.py
+/src/recap/m2_data.py
+/src/recap/m3_admin.py
+/src/recap/splits.py
+/src/recap/visual_scoring.py
+
+# README is the only tracked Markdown document, including nested directories.
+*.[mM][dD]
+!/README.md
+
+# All benchmark payloads, manifests, results, and development material stay local.
+/data/
+/artifacts/
+/experiments/
+/tests/
+/docs/
+/report-archive/
+/presentations/
+/inputs/
+/manuscripts/
+/runs/
+/outputs/
+/weights/
+/serve-llm/
+
+# Never track generated Python files or local credentials.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.uv-cache/
+.pytest_cache/
+.ruff_cache/
+*.runtime/
+*.log
+.secrets/
+.env
+.env.*
+*.env
+.aws/
+.ssh/
+credentials*.json
+*.key
+*.pem
+*.p12
+*.pfx
+.DS_Store
+*.swp
+*~
